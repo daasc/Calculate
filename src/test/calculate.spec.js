@@ -41,6 +41,22 @@ describe("Calculator", () => {
       expect(calculator.convertValue(-0)).toEqual(0);
     });
   });
-
-
+  describe("setHistoric()", () => {
+    it("should add value in historic", () => {
+      calculator.setHistoric("3 + 2 = 5");
+      expect(calculator.getHistoric()).toEqual("3 + 2 = 5");
+    });
+  });
+  describe("getHistoric()", () => {
+    it("should return historic", () => {
+      calculator.setHistoric("3 + 2 = 5");
+      expect(calculator.getHistoric()).toEqual("3 + 2 = 5");
+    });
+  });
+  describe("clean()", () => {
+    it("should clean historic", () => {
+      calculator.clean();
+      expect(calculator.getHistoric()).toEqual("");
+    });
+  });
 });
