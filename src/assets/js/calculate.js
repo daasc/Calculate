@@ -20,7 +20,7 @@ export default class Calculate {
   convertValue(number) {
     if (Object.is(+0, number)) return -0;
     if (Object.is(-0, number)) return 0;
-    return Math.sign(Number(number)) ? -Math.abs(number) : Math.abs(number);
+    return Number(number) > 0 ? -Math.abs(number) : Math.abs(number);
   }
   setHistoric(historic) {
     this.historic = historic;

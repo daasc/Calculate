@@ -10,8 +10,9 @@
 <body>
   <div class="container">
     <div class="panel">
-      <span class="historic">10 + 10 + 3 - 3</span>
-      <span class="result">225</span>
+      <span class="historic" id="historic_operation"></span>
+      <span class="result none" id="result_operation"></span>
+      <span class="digite-operation" id="value"></span>
     </div>
     <hr>
     <div class="operations">
@@ -42,9 +43,11 @@
         <span class="operation">x</span>
         <span class="operation">+</span>
         <span class="operation">-</span>
-        <span class="equal">=</span>
+        <span class="equal" id="equal">=</span>
       </div>
     </div>
   </div>
+
+  <script type="module" src="../assets/js/index.js"></script>
 </body>
 </html>

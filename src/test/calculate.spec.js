@@ -38,7 +38,7 @@ describe("Calculator", () => {
 
   describe("convertValue()", () => {
     it("must return the opposite value, that is, if it is positive, it must return negative, 100 must be -100", () => {
-      expect(calculator.convertValue(-0)).toEqual(0);
+      expect(calculator.convertValue(-23)).toEqual(23);
     });
   });
 

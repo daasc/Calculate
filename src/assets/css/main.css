@@ -10,6 +10,9 @@ body {
   background-color: var(--color-body);
 }
 @media (min-width: 0px) {
+  .none {
+    display: none !important;
+  }
   .container {
     background-color: var(--color-primary);
     width: 100%;
@@ -37,7 +40,7 @@ body {
     justify-content: center;
   }
   .result {
-    width: 100%;
+    max-width: 100%;
     height: 60%;
     font-size: 3.5rem;
     font-weight: bold;
@@ -45,6 +48,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    overflow: auto;
+  }
+  .result::-webkit-scrollbar,
+  .digite-operation::-webkit-scrollbar {
+    display: none;
+  }
+  .digite-operation {
+    max-width: 100%;
+    height: 60%;
+    font-size: 2rem;
+    color: var(--color-historic);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    overflow: auto;
   }
 
   hr {
@@ -70,27 +88,43 @@ body {
     align-items: center;
   }
   .column:nth-child(3)::after {
-    content: '';
-    margin-bottom: 17px;
-    }
-  .operation, .number {
-    font-size: 20px;
+    content: "";
+    margin-bottom: 41px;
   }
+  .operation,
+  .number {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+  
   .operation {
     color: var(--color-oparetaion);
   }
   .number {
     color: var(--color-numbers);
   }
-
+  input[type="text"] {
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-historic);
+  }
+  input[type="text"]:focus {
+    outline: none;
+  }
   .equal {
     padding: 10px;
     background-color: var(--color-oparetaion);
     color: var(--color-primary);
+    cursor: pointer;
   }
 }
 @media (min-width: 800px) {
 }
 
 @media (min-width: 1200px) {
+  .container {
+    width: 30%;
+    margin: 0 auto;
+  }
 }
