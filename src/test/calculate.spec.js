@@ -41,22 +41,51 @@ describe("Calculator", () => {
       expect(calculator.convertValue(-0)).toEqual(0);
     });
   });
+
   describe("setHistoric()", () => {
     it("should add value in historic", () => {
       calculator.setHistoric("3 + 2 = 5");
       expect(calculator.getHistoric()).toEqual("3 + 2 = 5");
     });
   });
+
   describe("getHistoric()", () => {
     it("should return historic", () => {
       calculator.setHistoric("3 + 2 = 5");
       expect(calculator.getHistoric()).toEqual("3 + 2 = 5");
     });
   });
+
   describe("clean()", () => {
     it("should clean historic", () => {
       calculator.clean();
       expect(calculator.getHistoric()).toEqual("");
     });
+  });
+  describe("operation(), will receive the transaction to carry out the transactions", () => {
+    it("operation() must allocate operations, test methods sum() should return sum 2 and 2 to be 4", () => {
+      expect(calculator.operation("2 + 2")).toEqual(4);
+      expect(calculator.getHistoric()).toEqual("2 + 2");
+
+    });
+    it("operation() must allocate operations, test methods subtract() should return subtract 2 and 2 to be 0", () => {
+      expect(calculator.operation("2 - 2")).toEqual(0);
+      expect(calculator.getHistoric()).toEqual("2 - 2");
+
+    });
+    it("operation() must allocate operations, test methods division() should return division 2 and 2 to be 1", () => {
+      expect(calculator.operation("2 / 2")).toEqual(1);
+      expect(calculator.getHistoric()).toEqual("2 / 2");
+
+    });
+    it("operation() must allocate operations, test methods multiply() should return multiply 2 and 2 to be 4", () => {
+      expect(calculator.operation("2 x 2")).toEqual(4);
+      expect(calculator.getHistoric()).toEqual("2 x 2");
+    });
+    it("operation() must allocate operations, test methods Percentage() should return percentage 10 and 100 to be 10",
+      () => {
+        expect(calculator.operation("10 % 100")).toEqual(10);
+        expect(calculator.getHistoric()).toEqual("10 % 100");
+      });
   });
 });
