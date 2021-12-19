@@ -11,4 +11,10 @@ describe("Calculator", () => {
       expect(calculator.sum(2, 2)).toEqual(4);
     });
   });
+
+  describe("Subtract(), perform the subtract", () => {
+    it("should subtract 2 and 2 the result must be 0", () => {
+      expect(calculator.subtract(2, 2)).toEqual(0);
+    });
+  });
 });
