@@ -76,7 +76,6 @@ describe("Calculator", () => {
     it("operation() must allocate operations, test methods division() should return division 2 and 2 to be 1", () => {
       expect(calculator.operation("2 / 2")).toEqual(1);
       expect(calculator.getHistoric()).toEqual("2 / 2");
-
     });
     it("operation() must allocate operations, test methods multiply() should return multiply 2 and 2 to be 4", () => {
       expect(calculator.operation("2 x 2")).toEqual(4);
@@ -87,5 +86,25 @@ describe("Calculator", () => {
         expect(calculator.operation("10 % 100")).toEqual(10);
         expect(calculator.getHistoric()).toEqual("10 % 100");
       });
+    it("operation(), more than one operation the operation is 3 - 3 + 2 must return 2", () => {
+      expect(calculator.operation("3 - 3 + 2")).toEqual(2);
+      expect(calculator.getHistoric()).toEqual("3 - 3 + 2");
+    });
+    it("operation(), more than one operation the operation is 3 + 3 + 2 must return 8", () => {
+      expect(calculator.operation("3 + 3 + 2")).toEqual(8);
+      expect(calculator.getHistoric()).toEqual("3 + 3 + 2");
+    });
+    it("operation(), more than one operation the operation is 3 / 3 x 2 must return 2", () => {
+      expect(calculator.operation("3 / 3 x 2")).toEqual(2);
+      expect(calculator.getHistoric()).toEqual("3 / 3 x 2");
+    });
+    it("operation(), more than one operation the operation is 3 / 30 x 2 must return 0.2", () => {
+      expect(calculator.operation("3 / 30 x 2")).toEqual(0.2);
+      expect(calculator.getHistoric()).toEqual("3 / 30 x 2");
+    });
+    it("operation(), more than one operation the operation is 30 / 3 x 2 % 100 must return 20", () => {
+      expect(calculator.operation("30 / 3 x 2 % 100")).toEqual(20);
+      expect(calculator.getHistoric()).toEqual("30 / 3 x 2 % 100");
+    });
   });
 });
