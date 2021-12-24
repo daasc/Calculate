@@ -10,6 +10,11 @@ const historic = document.querySelector("#historic_operation");
 
 document.querySelectorAll(".number").forEach(number =>
   number.addEventListener("click", (event) => {
+    if (event.target.innerText === ",") {
+      if (value.includes(",") || !value.length) {
+        return;
+      }
+    }
     if (result) {
       inputValue.textContent = " ";
       value = "";
